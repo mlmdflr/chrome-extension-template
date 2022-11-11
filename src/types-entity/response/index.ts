@@ -1,0 +1,1 @@
+export interface response<T> { status: number; message: string; data: T | undefined; time: number } 

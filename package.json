@@ -1,0 +1,50 @@
+{
+  "name": "aft-chrome-extension",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack  --mode development --watch",
+    "build": "cross-env NODE_ENV=production  webpack --progress --mode production",
+    "build:start": "cross-env NODE_ENV=development esno build-start.ts",
+    "build:compile": "cross-env NODE_ENV=development esno build-compile.ts",
+    "prettier": "prettier \"./src\" --write"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.3.14",
+    "@swc/helpers": "^0.4.12",
+    "@types/jquery": "^3.5.14",
+    "@types/node": "^18.11.9",
+    "@types/webpack": "^5.28.0",
+    "@types/webpack-watch-files-plugin": "^1.1.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.1",
+    "date-fns": "^2.29.3",
+    "del": "^7.0.0",
+    "esno": "^0.16.3",
+    "html-webpack-plugin": "^5.5.0",
+    "jquery": "^3.6.0",
+    "naive-ui": "^2.33.5",
+    "pinia": "^2.0.13",
+    "prettier": "^2.7.1",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "sucrase": "^3.28.0",
+    "swc-loader": "^0.2.3",
+    "typescript": "^4.8.4",
+    "unplugin-vue-components": "^0.22.9",
+    "url-loader": "^4.1.1",
+    "vue": "^3.2.44",
+    "vue-loader": "^17.0.0",
+    "vue-router": "^4.1.6",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "webpack-hook-plugin": "^1.0.7",
+    "webpack-watch-files-plugin": "^1.2.1"
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.2.44"
+  }
+}
