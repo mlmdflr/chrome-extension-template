@@ -1,8 +1,7 @@
-console.log('jq inject', $);
+console.log($('body'));
+
 chrome.runtime.sendMessage(
     { origin: 'content' },
     {},
-    (response: any) => {
-       
-    }
+    (response: any) => {}
 )

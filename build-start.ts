@@ -1,2 +1,2 @@
 import { deleteSync } from "del";
-deleteSync(['chrome/*'])
+deleteSync(['chrome/*', '!chrome/manifest.json'])

@@ -1,10 +1,11 @@
 {
   "name": "aft-chrome-extension",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack  --mode development --watch",
     "build": "cross-env NODE_ENV=production  webpack --progress --mode production",
+    "build:end": "cross-env NODE_ENV=development esno build-end.ts",
     "build:start": "cross-env NODE_ENV=development esno build-start.ts",
     "build:compile": "cross-env NODE_ENV=development esno build-compile.ts",
     "prettier": "prettier \"./src\" --write"
@@ -15,7 +16,7 @@
     "@types/jquery": "^3.5.14",
     "@types/node": "^18.11.9",
     "@types/webpack": "^5.28.0",
-    "@types/webpack-watch-files-plugin": "^1.1.0",
+    "@vue/compiler-sfc": "^3.2.44",
     "copy-webpack-plugin": "^11.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
@@ -23,9 +24,8 @@
     "del": "^7.0.0",
     "esno": "^0.16.3",
     "html-webpack-plugin": "^5.5.0",
-    "jquery": "^3.6.0",
+    "jquery": "^3.6.1",
     "naive-ui": "^2.33.5",
-    "pinia": "^2.0.13",
     "prettier": "^2.7.1",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
@@ -43,8 +43,5 @@
     "webpack-dev-server": "^4.7.4",
     "webpack-hook-plugin": "^1.0.7",
     "webpack-watch-files-plugin": "^1.2.1"
-  },
-  "dependencies": {
-    "@vue/compiler-sfc": "^3.2.44"
   }
 }

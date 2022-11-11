@@ -308,7 +308,7 @@
 
 "@types/jquery@^3.5.14":
   version "3.5.14"
-  resolved "https://registry.npmjs.org/@types/jquery/-/jquery-3.5.14.tgz"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.5.14.tgz#ac8e11ee591e94d4d58da602cb3a5a8320dee577"
   integrity sha512-X1gtMRMbziVQkErhTQmSe2jFwwENA/Zr+PprCkF63vFq+Yt5PZ4AlKqgmeNlwgn7dhsXEK888eIW2520EpC+xg==
   dependencies:
     "@types/sizzle" "*"
@@ -377,7 +377,7 @@
 
 "@types/sizzle@*":
   version "2.3.3"
-  resolved "https://registry.npmjs.org/@types/sizzle/-/sizzle-2.3.3.tgz"
+  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.3.tgz#ff5e2f1902969d305225a047c8a0fd5c915cebef"
   integrity sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==
 
 "@types/sockjs@^0.3.33":
@@ -386,15 +386,6 @@
   integrity sha512-f0KEEe05NvUnat+boPTZ0dgaLZ4SfSouXUgv5noUiefG2ajgKjmETo9ZJyuqsl7dfl2aHlLJUiki6B4ZYldiiw==
   dependencies:
     "@types/node" "*"
-
-"@types/webpack-watch-files-plugin@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@types/webpack-watch-files-plugin/-/webpack-watch-files-plugin-1.1.0.tgz#a532bd930c9b74e047ab66ee3850a1186d73690e"
-  integrity sha512-cQ91RG8AULPBa55lTtPNdbL3N6neZiWDVt3gYJwGumJH6zXwcef+isnxem1lHs69rHDKGDOYbM4po5LPdNt7zA==
-  dependencies:
-    "@types/node" "*"
-    tapable "^2.2.0"
-    webpack "^5"
 
 "@types/webpack@^5.28.0":
   version "5.28.0"
@@ -454,7 +445,7 @@
     "@vue/compiler-dom" "3.2.44"
     "@vue/shared" "3.2.44"
 
-"@vue/devtools-api@^6.4.4", "@vue/devtools-api@^6.4.5":
+"@vue/devtools-api@^6.4.5":
   version "6.4.5"
   resolved "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.4.5.tgz"
   integrity sha512-JD5fcdIuFxU4fQyXUu3w2KpAJHzTVdN+p4iOX2lMWSHMOoQdMAcpFLZzm9Z/2nmsoZ1a96QEhZ26e50xLBsgOQ==
@@ -2027,9 +2018,9 @@ jest-worker@^27.4.5:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jquery@^3.6.0:
+jquery@^3.6.1:
   version "3.6.1"
-  resolved "https://registry.npmjs.org/jquery/-/jquery-3.6.1.tgz"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.1.tgz#fab0408f8b45fc19f956205773b62b292c147a16"
   integrity sha512-opJeO4nCucVnsjiXOE+/PcCgYw9Gwpvs/a6B1LL/lQhwWwpbVEVYDZ1FokFr8PRc7ghYlrFPuyHuiiDNTQxmcw==
 
 json-parse-even-better-errors@^2.3.1:
@@ -2463,14 +2454,6 @@ picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.3.1:
   version "2.3.1"
   resolved "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
-
-pinia@^2.0.13:
-  version "2.0.23"
-  resolved "https://registry.npmjs.org/pinia/-/pinia-2.0.23.tgz"
-  integrity sha512-N15hFf4o5STrxpNrib1IEb1GOArvPYf1zPvQVRGOO1G1d74Ak0J0lVyalX/SmrzdT4Q0nlEFjbURsmBmIGUR5Q==
-  dependencies:
-    "@vue/devtools-api" "^6.4.4"
-    vue-demi "*"
 
 pirates@^4.0.1:
   version "4.0.5"
@@ -3199,11 +3182,6 @@ vooks@^0.2.12, vooks@^0.2.4:
   integrity sha512-iox0I3RZzxtKlcgYaStQYKEzWWGAduMmq+jS7OrNdQo1FgGfPMubGL3uGHOU9n97NIvfFDBGnpSvkWyb/NSn/Q==
   dependencies:
     evtd "^0.2.2"
-
-vue-demi@*:
-  version "0.13.11"
-  resolved "https://registry.npmjs.org/vue-demi/-/vue-demi-0.13.11.tgz"
-  integrity sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==
 
 vue-loader@^17.0.0:
   version "17.0.1"

@@ -4,8 +4,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { VueLoaderPlugin } from 'vue-loader'
 import Components from 'unplugin-vue-components/webpack'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
-import type { Configuration } from 'webpack'
 import webpack from 'webpack'
+import type { Configuration } from 'webpack'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import WebpackHookPlugin from 'webpack-hook-plugin'
 import WatchExternalFilesPlugin from 'webpack-watch-files-plugin'
@@ -22,13 +22,11 @@ const mode: any = process.env.MODE ?? 'development'
 const isDev = mode === 'development'
 
 const config: Configuration = {
-  devtool: "eval-cheap-source-map",	// 启用sourceMap
+  devtool: "source-map",	// 启用sourceMap
   mode,
   entry: {
     'background': resolve('src', 'main/background'),
-    'option': resolve('src', 'main/option'),
-    'popup': resolve('src', 'main/popup'),
-    'devTools': resolve('src', 'main/devTools'),
+    'popup': resolve('src', 'main/popup')
   },
   output: {
     path: resolve(__dirname, './chrome'),
@@ -116,26 +114,6 @@ const config: Configuration = {
       '__VUE_OPTIONS_API__': true,
       '__VUE_PROD_DEVTOOLS__': false
     }),
-    new HtmlWebpackPlugin({
-      filename: 'option.html',
-      template: 'src/main/option/option.html',
-      inject: 'body',
-      chunks: ["option"],
-      minify: { //压缩
-        removeComments: true,
-        collapseWhitespace: true,
-      }
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'devTools.html',
-      template: 'src/main/devTools/devTools.html',
-      inject: 'body',
-      chunks: ["devTools"],
-      minify: { //压缩
-        removeComments: true,
-        collapseWhitespace: true,
-      }
-    }),
     new CopyWebpackPlugin({
       patterns: [{
         from: resolve(__dirname, 'src/manifest.json'),
@@ -153,6 +131,7 @@ const config: Configuration = {
     }),
   ],
 }
+
 function file(path: string) {
   let files: string[] = [];
   let dirArray = readdirSync(path);
@@ -169,16 +148,19 @@ function file(path: string) {
   return files;
 }
 
-console.log(isDev);
 
-
-!isDev && (delete config.devtool)
-
-isDev && config.plugins?.push(new WebpackHookPlugin({
-  onBuildStart: ['npm run build:start'],
-  onCompile: ['npm run build:compile']
-}))
-
+if (isDev) {
+  config.plugins?.push(new WatchExternalFilesPlugin({
+    files: [
+      './src/manifest.config/**',
+    ]
+  }))
+  config.plugins?.push(new WebpackHookPlugin({
+    onBuildEnd: ['npm run build:end'],
+    onBuildStart: ['npm run build:start'],
+    onCompile: ['npm run build:compile']
+  }))
+} else delete config.devtool
 
 
 for (let f of file(resolve("src/main/content"))) config.entry && (config.entry[f] = resolve('src', `main/content/${f}.ts`));

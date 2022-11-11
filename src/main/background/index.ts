@@ -4,7 +4,6 @@ chrome.runtime.onMessage.addListener(function (
   sendResponse: (...args: any[]) => void
 ) {
   console.log(request, sender);
-  console.log($);
   setInterval(sendResponse)
   //处理异步响应
   return true

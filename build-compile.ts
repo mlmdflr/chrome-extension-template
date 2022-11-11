@@ -7,16 +7,18 @@ let chromeDirPath = resolve(`./chrome`)
 let distManifestPath = resolve(`./chrome/manifest.json`)
 let manifestPath = resolve(`./src/manifest.json`)
 
+if (existsSync(chromeDirPath) && existsSync(distManifestPath)) {
+    let manifest = JSON.parse(readFileSync(manifestPath, { encoding: 'utf-8' }))
 
 
-let manifest = JSON.parse(readFileSync(manifestPath, { encoding: 'utf-8' }))
+    !existsSync(chromeDirPath) && mkdirSync(chromeDirPath)
+    !existsSync(distManifestPath) && writeFileSync(distManifestPath, JSON.stringify(manifest, null, 2));
+
+    let distManifest = JSON.parse(readFileSync(distManifestPath, { encoding: 'utf-8' }))
+    distManifest['content_scripts'] = config
+    distManifest['permissions'] = config_permissions
+
+    writeFileSync(distManifestPath, JSON.stringify(distManifest, null, 2));
+}
 
 
-!existsSync(chromeDirPath) && mkdirSync(chromeDirPath)
-!existsSync(distManifestPath) && writeFileSync(distManifestPath, JSON.stringify(manifest, null, 2));
-
-let distManifest = JSON.parse(readFileSync(distManifestPath, { encoding: 'utf-8' }))
-distManifest['content_scripts'] = config
-distManifest['permissions'] = config_permissions
-
-writeFileSync(distManifestPath, JSON.stringify(distManifest, null, 2));

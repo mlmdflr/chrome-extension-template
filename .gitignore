@@ -3,3 +3,5 @@ dist
 .DS_Store
 pnpm-lock.yaml
 chrome
+yarn.lock
+yarn-error.log

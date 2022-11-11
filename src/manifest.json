@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "阿帆题插件",
+  "name": "插件模板",
   "version": "1.0.0",
-  "description": "阿帆题插件",
+  "description": "插件模板",
   "content_security_policy": {
     "script-src": "self",
     "object-src": "self"
@@ -16,10 +16,9 @@
   },
   "action": {
     "default_icon": "static/img/icon.png",
-    "default_title": "阿帆题插件",
+    "default_title": "插件模板",
     "default_popup": "popup.html"
   },
-  "options_page": "option.html",
   "background": {
     "service_worker": "background.js"
   },
