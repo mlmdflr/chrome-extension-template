@@ -4,7 +4,6 @@ declare module '*.vue' {
   export default component
 }
 
-
 declare module '*.svg'
 declare module '*.png'
 declare module '*.ico'

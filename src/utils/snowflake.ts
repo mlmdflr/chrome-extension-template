@@ -9,8 +9,7 @@ export class Snowflake {
   static #sequenceBits: bigint = 12n
 
   static #maxWorkerId: bigint = -1n ^ (-1n << Snowflake.#workerIdBits)
-  static #maxDataCenterId: bigint =
-    -1n ^ (-1n << Snowflake.#dataCenterIdBits)
+  static #maxDataCenterId: bigint = -1n ^ (-1n << Snowflake.#dataCenterIdBits)
   static #sequenceMask: bigint = -1n ^ (-1n << Snowflake.#sequenceBits)
 
   static #workerIdShift: bigint = Snowflake.#sequenceBits
@@ -27,11 +26,15 @@ export class Snowflake {
   constructor(workerId: bigint, dataCenterId: bigint) {
     if (workerId > Snowflake.#maxWorkerId || workerId < 0n)
       throw new Error(
-        `workerId can't be greater than ${Snowflake.#maxWorkerId} or less than 0`
+        `workerId can't be greater than ${
+          Snowflake.#maxWorkerId
+        } or less than 0`
       )
     if (dataCenterId > Snowflake.#maxDataCenterId || dataCenterId < 0n)
       throw new Error(
-        `dataCenterId can't be greater than ${Snowflake.#maxDataCenterId} or less than 0`
+        `dataCenterId can't be greater than ${
+          Snowflake.#maxDataCenterId
+        } or less than 0`
       )
     Snowflake.#workerId = workerId
     Snowflake.#dataCenterId = dataCenterId

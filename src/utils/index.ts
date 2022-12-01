@@ -23,5 +23,5 @@ export function queryParams(data: any): string {
 }
 
 export function random(start: number = 0, end: number = 1): number {
-  return (Math.random() * (end - start + 1) + start) | 0;
+  return (Math.random() * (end - start + 1) + start) | 0
 }

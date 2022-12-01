@@ -37,6 +37,8 @@ const config: Configuration = {
     //路徑別名
     alias: {
       '@': resolve(__dirname, 'src'),
+      '@cfg': resolve(__dirname, 'src/config'),
+      '@type': resolve(__dirname, 'src/types'),
       'static': resolve('static'),
     },
     extensions: ['.ts', '.js', '.mjs', '.json'],

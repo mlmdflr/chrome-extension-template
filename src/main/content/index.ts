@@ -1,7 +1,3 @@
-console.log($('body'));
+console.log($('body'))
 
-chrome.runtime.sendMessage(
-    { origin: 'content' },
-    {},
-    (response: any) => {}
-)
+chrome.runtime.sendMessage({ origin: 'content' }, {}, (response: any) => {})
